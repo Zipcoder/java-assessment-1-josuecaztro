@@ -2,6 +2,7 @@ package com.zipcodewilmington.assessment1.part2;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.stream.Stream;
 
 /**
  * Created by leon on 2/16/18.
@@ -51,9 +52,9 @@ public class ArrayUtils {
 
                 }
             }
-                Object[] solution = arr_new.toArray(new Object[0]);
-
-return solution;
+                Object[] solution = arr_new.toArray(new Object[arr_new.size()]);
+                Object[] real = (Object[]) solution;
+                return real;
     }
 
     /**
@@ -134,7 +135,7 @@ return solution;
      * given two arrays `objectArray` and `objectArrayToAdd`, return an array containing all elements in `objectArray` and `objectArrayToAdd`
      */
     public static Object[] mergeArrays(Object[] objectArray, Object[] objectArrayToAdd) {
-////        Object[] solution = ArrayUtils.addAll(objectArray, objectArrayToAdd);
+//        Object[] solution = ArrayUtils.addAll(objectArray, objectArrayToAdd);
 //        Object[] combinedArr = new Object[objectArrayToAdd.length + objectArray.length];
 //        int index = objectArrayToAdd.length;
 //        for (int i = 0; i < objectArrayToAdd.length; i++){
@@ -155,15 +156,21 @@ return solution;
 //        return answer;
 
 
-        Object[] result = new Object[objectArray.length + objectArrayToAdd.length];
-        int index = 0;
-        for (Object item : objectArray){
-            result[index++] = item;
-        }
-        for (Object item : objectArrayToAdd){
-            result[index++] = item;
-        }
-        return result;
+//        Object[] result = new Object[objectArray.length + objectArrayToAdd.length];
+//        int index = 0;
+//        for (Object item : objectArray){
+//            result[index++] = item;
+//        }
+//        for (Object item : objectArrayToAdd){
+//            result[index++] = item;
+//        }
+//        return result;
 
+
+//        Object[] merged = Stream.of(objectArray, objectArrayToAdd).flatMap(Stream::of).toArray();
+//        return merged;
+
+
+        return null;
     }
 }

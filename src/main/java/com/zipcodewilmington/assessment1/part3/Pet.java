@@ -11,17 +11,12 @@ public abstract class Pet implements Animal {
 
     private String name = "";
     private Integer age = 0;
-    private PetOwner owner;
+    private PetOwner owner = null;
 
     public Pet(){
-    this.age = 0;
-    this.name = "";
+
     }
-//
-//    public Pet(String name, Integer age){
-//        this.name = name;
-//        this.age = age;
-//    }
+
 
     /**
      * @param name name of this pet
