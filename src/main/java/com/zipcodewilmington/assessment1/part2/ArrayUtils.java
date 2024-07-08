@@ -1,5 +1,9 @@
 package com.zipcodewilmington.assessment1.part2;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.stream.Stream;
+
 /**
  * Created by leon on 2/16/18.
  */
@@ -11,7 +15,14 @@ public class ArrayUtils {
      * Given an array of objects, named `objectArray`, and an object `objectToCount`, return the number of times the `objectToCount` appears in the `objectArray`
      */
     public static Integer getNumberOfOccurrences(Object[] objectArray, Object objectToCount) {
-        return null;
+        Integer counter = 0;
+        for (Object x : objectArray){
+            if (x == objectToCount){
+                counter++;
+            }
+        }
+        return counter;
+//        return null;
     }
 
     /**
@@ -21,7 +32,31 @@ public class ArrayUtils {
      * Given an array of objects, name `objectArray`, and an object `objectToRemove`, return an array of objects with identical contents excluding `objectToRemove`
      */
     public static Object[] removeValue(Object[] objectArray, Object objectToRemove) {
-        return null;
+        ArrayList<Object> newList = new ArrayList<>();
+
+        for (Object x : objectArray){
+            if (x != objectToRemove){
+                newList.add(x);
+            }
+        }
+        Object[] solution = newList.toArray(new Object[newList.size()]);
+//        Object[] solution = (Object[])newList.toArray();
+
+
+//        return solution;
+//        return null;
+
+
+
+//            ArrayList<Object> arr_new = new ArrayList<>();
+//            for(int i=0;i<objectArray.length;i++){
+//                if(objectArray[i] != (objectToRemove)){
+//                    arr_new.add(objectArray[i]);
+//
+//                }
+//            }
+//                Object[] solution = arr_new.toArray(new Object[arr_new.size()]);
+                return solution;
     }
 
     /**
@@ -30,7 +65,31 @@ public class ArrayUtils {
      * given an array of objects, named `objectArray` return the most frequently occuring object in the array
      */
     public static Object getMostCommon(Object[] objectArray) {
-        return null;
+
+        int count = 1, tempCount;
+        Object popular = objectArray[0];
+        Object temp;
+        for (int i = 0; i < (objectArray.length - 1); i++){
+            temp = objectArray[i];
+            tempCount = 0;
+            for (int j = 1; j < objectArray.length; j++){
+                if (temp == objectArray[j]){
+                    tempCount++;
+                }
+                if (tempCount > count){
+                    popular = temp;
+                    count = tempCount;
+                }
+            }
+        }
+        return popular;
+
+
+
+
+
+
+//        return null;
     }
 
 
@@ -40,7 +99,35 @@ public class ArrayUtils {
      * given an array of objects, named `objectArray` return the least frequently occuring object in the array
      */
     public static Object getLeastCommon(Object[] objectArray) {
-        return null;
+//    Object[] results = new Object[objectArray.length];
+//    int minCount = Integer.MAX_VALUE;
+//    for (int i = 0; i < objectArray.length; i++){
+//        for (int j = 0; j < objectArray.length; j++){
+//            if (objectArray[j] == objectArray[i]){
+//                results[i]++;
+//            }
+//        }
+//    }
+
+        int count = 1, tempCount;
+        Object popular = objectArray[0];
+        Object temp;
+        for (int i = 0; i < (objectArray.length - 1); i++){
+            temp = objectArray[i];
+            tempCount = 0;
+            for (int j = 1; j < objectArray.length; j++){
+                if (temp == objectArray[j]){
+                    tempCount++;
+                }
+                if (tempCount < count){
+                    popular = temp;
+                    count = tempCount;
+                }
+            }
+        }
+        return popular;
+
+
     }
 
     /**
@@ -50,6 +137,76 @@ public class ArrayUtils {
      * given two arrays `objectArray` and `objectArrayToAdd`, return an array containing all elements in `objectArray` and `objectArrayToAdd`
      */
     public static Object[] mergeArrays(Object[] objectArray, Object[] objectArrayToAdd) {
-        return null;
+//        Object[] solution = ArrayUtils.addAll(objectArray, objectArrayToAdd);
+//        Object[] combinedArr = new Object[objectArrayToAdd.length + objectArray.length];
+//        int index = objectArrayToAdd.length;
+//        for (int i = 0; i < objectArrayToAdd.length; i++){
+//            combinedArr[i] = objectArrayToAdd[i];
+//        }
+//        for (int i = 0; i < objectArray.length; i++){
+//            combinedArr[i + index] = objectArray[i];
+//        }
+//        return combinedArr;
+
+//        ArrayList<Object> list = new ArrayList<>();
+//
+//        list.addAll(Arrays.asList(objectArray));
+//
+//        list.addAll(Arrays.asList(objectArrayToAdd));
+//
+//        Object[] answer = list.toArray(new Object[0]);
+//        return answer;
+
+
+//        Object[] result = new Object[objectArray.length + objectArrayToAdd.length];
+//        int index = 0;
+//        for (Object item : objectArray){
+//            result[index++] = item;
+//        }
+//        for (Object item : objectArrayToAdd){
+//            result[index++] = item;
+//        }
+//        return result;
+
+
+//        Object[] merged = Stream.of(objectArray, objectArrayToAdd).flatMap(Stream::of).toArray();
+//        return merged;
+
+
+//
+//                int arr1L = objectArray.length;
+//                int arr2L =objectArrayToAdd.length;
+//                int arr3L = arr1L + arr2L;
+//                Object[] arr3 =new Object[arr3L];
+//                for (int i = 0; i < arr1L; i = i + 1) {
+//                    arr3[i] = objectArray[i];
+//                }
+//                for (int i = 0; i < arr2L; i = i + 1) {
+//                    arr3[arr1L + i] = objectArrayToAdd[i];
+//                }
+////                for (int i = 0; i < arr3L; i =i + 1) {
+////                    System.out.print(arr3[i]);
+////                }
+//        return arr3;
+
+//        Object[] merged = Stream.concat(Arrays.stream(objectArray), Arrays.stream(objectArrayToAdd)).toArray(Object[]::new);
+//
+//        return merged;
+
+
+
+
+//                Object[] mergedArray = Stream.concat(Arrays.stream(objectArray), Arrays.stream(objectArrayToAdd)).toArray(Object[]::new);
+//        return mergedArray;
+
+
+            Object[] result = Arrays.copyOf(objectArray, objectArray.length + objectArrayToAdd.length);
+            System.arraycopy(objectArrayToAdd, 0, result, objectArray.length, objectArrayToAdd.length);
+            return result;
+
+
+
+//        return null;
     }
+
 }
