@@ -10,8 +10,12 @@ public class Dog extends Pet {
      */
 
 
+    private String name = "Dog name";
+    private Integer age = 2147483647;
+
     public Dog(String name, Integer age) {
         super(name,age);
+
     }
 
     /**
@@ -35,7 +39,6 @@ public class Dog extends Pet {
      * age is 0
      */
     public Dog() {
-//        super(Pet);
     }
 
     /**

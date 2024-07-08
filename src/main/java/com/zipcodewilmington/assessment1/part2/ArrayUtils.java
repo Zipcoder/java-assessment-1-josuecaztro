@@ -1,6 +1,7 @@
 package com.zipcodewilmington.assessment1.part2;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 /**
  * Created by leon on 2/16/18.
@@ -30,16 +31,29 @@ public class ArrayUtils {
      * Given an array of objects, name `objectArray`, and an object `objectToRemove`, return an array of objects with identical contents excluding `objectToRemove`
      */
     public static Object[] removeValue(Object[] objectArray, Object objectToRemove) {
-        ArrayList<Object> newList = new ArrayList<>();
-
-        for (Object x : objectArray){
-            if (!x.equals(objectToRemove)){
-                newList.add(x);
-            }
-        }
-        Object[] solution = newList.toArray(new Object[0]);
-        return solution;
+//        ArrayList<Object> newList = new ArrayList<>();
+//
+//        for (Object x : objectArray){
+//            if (x != objectToRemove){
+//                newList.add(x);
+//            }
+//        }
+//        Object[] solution = newList.toArray(new Object[0]);
+//        return solution;
 //        return null;
+
+
+
+            ArrayList<Object> arr_new = new ArrayList<>();
+            for(int i=0;i<objectArray.length;i++){
+                if(!objectArray[i].equals(objectArray)){
+                    arr_new.add(objectArray[i]);
+
+                }
+            }
+                Object[] solution = arr_new.toArray(new Object[0]);
+
+return solution;
     }
 
     /**
@@ -91,7 +105,26 @@ public class ArrayUtils {
 //            }
 //        }
 //    }
-        return null;
+
+        int count = 1, tempCount;
+        Object popular = objectArray[0];
+        Object temp;
+        for (int i = 0; i < (objectArray.length - 1); i++){
+            temp = objectArray[i];
+            tempCount = 0;
+            for (int j = 1; j < objectArray.length; j++){
+                if (temp == objectArray[j]){
+                    tempCount++;
+                }
+                if (tempCount < count){
+                    popular = temp;
+                    count = tempCount;
+                }
+            }
+        }
+        return popular;
+
+
     }
 
     /**
@@ -101,15 +134,36 @@ public class ArrayUtils {
      * given two arrays `objectArray` and `objectArrayToAdd`, return an array containing all elements in `objectArray` and `objectArrayToAdd`
      */
     public static Object[] mergeArrays(Object[] objectArray, Object[] objectArrayToAdd) {
-//        Object[] solution = ArrayUtils.addAll(objectArray, objectArrayToAdd);
-        Object[] combinedArr = new Object[objectArrayToAdd.length + objectArray.length];
-        int index = objectArrayToAdd.length;
-        for (int i = 0; i < objectArrayToAdd.length; i++){
-            combinedArr[i] = objectArrayToAdd[i];
+////        Object[] solution = ArrayUtils.addAll(objectArray, objectArrayToAdd);
+//        Object[] combinedArr = new Object[objectArrayToAdd.length + objectArray.length];
+//        int index = objectArrayToAdd.length;
+//        for (int i = 0; i < objectArrayToAdd.length; i++){
+//            combinedArr[i] = objectArrayToAdd[i];
+//        }
+//        for (int i = 0; i < objectArray.length; i++){
+//            combinedArr[i + index] = objectArray[i];
+//        }
+//        return combinedArr;
+
+//        ArrayList<Object> list = new ArrayList<>();
+//
+//        list.addAll(Arrays.asList(objectArray));
+//
+//        list.addAll(Arrays.asList(objectArrayToAdd));
+//
+//        Object[] answer = list.toArray(new Object[0]);
+//        return answer;
+
+
+        Object[] result = new Object[objectArray.length + objectArrayToAdd.length];
+        int index = 0;
+        for (Object item : objectArray){
+            result[index++] = item;
         }
-        for (int i = 0; i < objectArray.length; i++){
-            combinedArr[i + index] = objectArray[i];
+        for (Object item : objectArrayToAdd){
+            result[index++] = item;
         }
-        return combinedArr;
+        return result;
+
     }
 }

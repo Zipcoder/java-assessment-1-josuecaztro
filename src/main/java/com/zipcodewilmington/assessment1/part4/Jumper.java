@@ -12,23 +12,44 @@ public class Jumper {
     public int jumps(int k, int j) {
 
         int counter = 0;
-
-            for (int i = 1; i < k; i++){
-                int temp = j * i;
-                counter++;
-                if (temp >= k){
-                    break;
+            if (j >= k){
+                counter = 1;
+            } else {
+                for (int i = 1; i < (k * k); i++){
+                    int temp = j * i;
+                    counter++;
+                    if (temp >= k){
+                        break;
+                    }
                 }
             }
-//            int x = j;
-//            int y = k;
-//            int d = j;
-//
-//            int solution = (y - x) / d + ((y-x) % d == 0 ? 0 : 1);
-
-
             return counter;
 
+//
+//
+//        int temp = j;
+//        int counter = 0;
+//
+//        if (j >= k){
+//            counter = 1;
+//        }
+//
+//
+//        else {
+//            for (int i = 1; temp == k; i++) {
+//                temp = j * i;
+//                counter++;
+//            }
+//        }
+//        return counter;
+
+//        int x = k;
+//        int y = j;
+//        int jumps = (x + y - 1) / y;
+//        return jumps;
+
+//        Integer solution = (int) Math.ceil((double)(k / j));
+//        return solution;
 
 
 
