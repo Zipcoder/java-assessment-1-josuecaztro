@@ -1,5 +1,7 @@
 package com.zipcodewilmington.assessment1.part2;
 
+import java.util.ArrayList;
+
 /**
  * Created by leon on 2/16/18.
  */
@@ -10,7 +12,16 @@ public class MultiplesDeleter {
      * given an array of integers, named `ints` return an identical array with evens removed
      */
     public Integer[] deleteEvens(Integer[] ints) {
-        return null;
+
+        ArrayList<Integer> solutionList = new ArrayList<>();
+        for (int x : ints){
+            if (x % 2 != 0){
+                solutionList.add(x);
+            }
+        }
+        Integer[] solution = solutionList.toArray(new Integer[0]);
+        return solution;
+//        return null;
     }
 
     /**
@@ -19,7 +30,15 @@ public class MultiplesDeleter {
      * given an array of integers, named `ints` return an identical array with odds removed
      */
     public Integer[] deleteOdds(Integer[] ints) {
-        return null;
+        ArrayList<Integer> solutionList = new ArrayList<>();
+        for (int x : ints){
+            if (x % 2 == 0){
+                solutionList.add(x);
+            }
+        }
+        Integer[] solution = solutionList.toArray(new Integer[0]);
+        return solution;
+//        return null;
     }
 
     /**
@@ -28,7 +47,16 @@ public class MultiplesDeleter {
      * given an array of integers, named `ints` return an identical array with numbers indivisible by 3 removed
      */
     public Integer[] deleteMultiplesOf3(Integer[] ints) {
-        return null;
+
+        ArrayList<Integer> solutionList = new ArrayList<>();
+        for (int x : ints){
+            if (x % 3 != 0){
+                solutionList.add(x);
+            }
+        }
+        Integer[] solution = solutionList.toArray(new Integer[0]);
+        return solution;
+//        return null;
     }
 
     /**
@@ -38,6 +66,14 @@ public class MultiplesDeleter {
      * given an array of integers, named `ints` return an identical array with numbers indivisible by `multiple` removed
      */
     public Integer[] deleteMultiplesOfN(Integer[] ints, int multiple) {
-        return null;
+        ArrayList<Integer> solutionList = new ArrayList<>();
+        for (int x : ints){
+            if (x % multiple != 0){
+                solutionList.add(x);
+            }
+        }
+        Integer[] solution = solutionList.toArray(new Integer[0]);
+        return solution;
+//        return null;
     }
 }
