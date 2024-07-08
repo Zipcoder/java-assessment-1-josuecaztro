@@ -11,7 +11,7 @@ public class PetOwner {
      * @param pets array of Pet object
      */
     String name = "";
-    Pet[] pets;
+    private static ArrayList<Pet> petList = new ArrayList<>();
 
 
     public PetOwner(String name, Pet... pets) {
@@ -22,14 +22,14 @@ public class PetOwner {
      * @param pet pet to be added to the composite collection of Pets
      */
     public void addPet(Pet pet) {
-//        pets.add(pet);
+        petList.add(pet);
     }
 
     /**
      * @param pet pet to be removed from the composite collection Pets
      */
     public void removePet(Pet pet) {
-
+    petList.remove(pet);
 
     }
 
@@ -46,6 +46,7 @@ public class PetOwner {
      * @return the age of the Pet object whose age field is the lowest amongst all Pets in this class
      */
     public Integer getYoungetPetAge() {
+
         return null;
     }
 
@@ -72,7 +73,7 @@ public class PetOwner {
      */
     public Integer getNumberOfPets() {
 
-        return pets.length;
+        return petList.size();
     }
 
     /**
@@ -88,6 +89,6 @@ public class PetOwner {
      */
     public Pet[] getPets() {
 
-        return pets;
+        return petList.toArray(new Pet[0]);
     }
 }
