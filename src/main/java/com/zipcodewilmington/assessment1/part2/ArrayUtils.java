@@ -32,29 +32,31 @@ public class ArrayUtils {
      * Given an array of objects, name `objectArray`, and an object `objectToRemove`, return an array of objects with identical contents excluding `objectToRemove`
      */
     public static Object[] removeValue(Object[] objectArray, Object objectToRemove) {
-//        ArrayList<Object> newList = new ArrayList<>();
-//
-//        for (Object x : objectArray){
-//            if (x != objectToRemove){
-//                newList.add(x);
-//            }
-//        }
-//        Object[] solution = newList.toArray(new Object[0]);
+        ArrayList<Object> newList = new ArrayList<>();
+
+        for (Object x : objectArray){
+            if (x != objectToRemove){
+                newList.add(x);
+            }
+        }
+        Object[] solution = newList.toArray(new Object[newList.size()]);
+//        Object[] solution = (Object[])newList.toArray();
+
+
 //        return solution;
 //        return null;
 
 
 
-            ArrayList<Object> arr_new = new ArrayList<>();
-            for(int i=0;i<objectArray.length;i++){
-                if(!objectArray[i].equals(objectArray)){
-                    arr_new.add(objectArray[i]);
-
-                }
-            }
-                Object[] solution = arr_new.toArray(new Object[arr_new.size()]);
-                Object[] real = (Object[]) solution;
-                return real;
+//            ArrayList<Object> arr_new = new ArrayList<>();
+//            for(int i=0;i<objectArray.length;i++){
+//                if(objectArray[i] != (objectToRemove)){
+//                    arr_new.add(objectArray[i]);
+//
+//                }
+//            }
+//                Object[] solution = arr_new.toArray(new Object[arr_new.size()]);
+                return solution;
     }
 
     /**
@@ -171,6 +173,40 @@ public class ArrayUtils {
 //        return merged;
 
 
-        return null;
+//
+//                int arr1L = objectArray.length;
+//                int arr2L =objectArrayToAdd.length;
+//                int arr3L = arr1L + arr2L;
+//                Object[] arr3 =new Object[arr3L];
+//                for (int i = 0; i < arr1L; i = i + 1) {
+//                    arr3[i] = objectArray[i];
+//                }
+//                for (int i = 0; i < arr2L; i = i + 1) {
+//                    arr3[arr1L + i] = objectArrayToAdd[i];
+//                }
+////                for (int i = 0; i < arr3L; i =i + 1) {
+////                    System.out.print(arr3[i]);
+////                }
+//        return arr3;
+
+//        Object[] merged = Stream.concat(Arrays.stream(objectArray), Arrays.stream(objectArrayToAdd)).toArray(Object[]::new);
+//
+//        return merged;
+
+
+
+
+//                Object[] mergedArray = Stream.concat(Arrays.stream(objectArray), Arrays.stream(objectArrayToAdd)).toArray(Object[]::new);
+//        return mergedArray;
+
+
+            Object[] result = Arrays.copyOf(objectArray, objectArray.length + objectArrayToAdd.length);
+            System.arraycopy(objectArrayToAdd, 0, result, objectArray.length, objectArrayToAdd.length);
+            return result;
+
+
+
+//        return null;
     }
+
 }

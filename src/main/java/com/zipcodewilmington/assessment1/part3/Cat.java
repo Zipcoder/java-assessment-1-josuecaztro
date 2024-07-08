@@ -9,8 +9,8 @@ public class Cat extends Pet {
      * @param age age of this Cat
      */
 
-    private Integer age = Integer.MAX_VALUE;
-    private String name = "Cat name";
+     private Integer age = Integer.MAX_VALUE;
+     String name = "Cat name";
 
 
     public Cat(String name, Integer age) {
@@ -21,7 +21,7 @@ public class Cat extends Pet {
      * @param age age of this Cat
      */
     public Cat(Integer age) {
-        this.age = Integer.MAX_VALUE;
+    this.age = age;
     }
 
     /**

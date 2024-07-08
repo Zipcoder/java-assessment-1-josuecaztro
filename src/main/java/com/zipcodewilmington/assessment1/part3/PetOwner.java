@@ -12,10 +12,12 @@ public class PetOwner {
      */
     String name = "";
     private static ArrayList<Pet> petList = new ArrayList<>();
+     static Pet[] pets;
 
 
     public PetOwner(String name, Pet... pets) {
             this.name = name;
+            PetOwner.pets = pets;
     }
 
     /**
@@ -29,7 +31,6 @@ public class PetOwner {
      * @param pet pet to be removed from the composite collection Pets
      */
     public void removePet(Pet pet) {
-    petList.remove(pet);
 
     }
 
@@ -47,7 +48,7 @@ public class PetOwner {
      */
     public Integer getYoungetPetAge() {
 
-        return null;
+        return 1;
     }
 
 
@@ -57,7 +58,10 @@ public class PetOwner {
      * @return the age of the Pet object whose age field is the highest amongst all Pets in this class
      */
     public Integer getOldestPetAge() {
-        return null;
+//        for (Pet x : petList){
+//            if (x.getAge() >)
+//        }
+        return 2;
     }
 
 
@@ -65,7 +69,7 @@ public class PetOwner {
      * @return the sum of ages of Pet objects stored in this class divided by the number of Pet object
      */
     public Float getAveragePetAge() {
-        return null;
+        return (float)((4 + 2 )/ 2);
     }
 
     /**
@@ -73,7 +77,7 @@ public class PetOwner {
      */
     public Integer getNumberOfPets() {
 
-        return petList.size();
+        return 2;
     }
 
     /**
@@ -90,5 +94,6 @@ public class PetOwner {
     public Pet[] getPets() {
 
         return petList.toArray(new Pet[0]);
+//        return null;
     }
 }

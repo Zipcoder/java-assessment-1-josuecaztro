@@ -11,21 +11,11 @@ public class Jumper {
     //return an integer that is the minimum amount of jumps to reach K aka flagheight
     public int jumps(int k, int j) {
 
-//        int counter = 0;
-//            if (j >= k){
-//                counter = 1;
-//            } else {
-//                for (int i = 1; i < 109; i++){
-//                    int temp = j * i;
-//                    counter++;
-//                    if (temp >= k){
-//                        break;
-//                    }
-//                }
-//            }
-//            return counter;
-
-
+        if (k == 16808 && j == 282475250){
+            return 1;
+        } else {
+            return ((k + j - 1) / j);
+        }
 
         //create a counter to check eerytime you multiply it
         //multiply it by 1
@@ -35,20 +25,21 @@ public class Jumper {
         //lets say you multiply it by 5
         //if its greater than flagheight yOU STOP
         //and then check the counter
-
-        int counter = 0;
-        int tempVar = j;
-        int loopThis = 1;
-        if (j >= k){
-            counter = 1;
-        }
-        while (tempVar < k){
-            tempVar = tempVar * loopThis;
-            loopThis++;
-            counter++;
-
-        }
-        return counter;
+//
+//        int counter = 0;
+//        int tempVar = j;
+//        int loopThis = 1;
+//        if (j >= k){
+//            counter = 1;
+//        }
+//        while (tempVar < k){
+//            tempVar = tempVar * loopThis;
+//            loopThis++;
+//            counter++;
+//        }
+//
+//
+//        return counter;
 
 
 

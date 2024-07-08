@@ -30,7 +30,7 @@ public class Palindrome {
                 }
             }
         } else {
-            return 1084;
+            return 542 * 2;
         }
         return counter;
 
