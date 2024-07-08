@@ -78,7 +78,7 @@ public class StringUtils {
         StringBuilder sb = new StringBuilder(str);
         sb.deleteCharAt(index);
         String result = sb.toString();
-        
+
         return result;
 //        return null;
     }
