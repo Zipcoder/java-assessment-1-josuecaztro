@@ -39,7 +39,6 @@ public class PetOwner {
      * @return true if I own this pet
      */
     public Boolean isOwnerOf(Pet pet) {
-
         return true;
     }
 
